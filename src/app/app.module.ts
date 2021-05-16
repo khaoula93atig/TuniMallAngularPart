@@ -5,14 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BoutiquesComponent } from './boutique/boutiques/boutiques.component';
 import { ProduitsComponent } from './produit/produits/produits.component';
-import { ServiceComponent } from './produit/service/service.component';
-
+import { CommandeComponent } from './commande/commande/commande.component';
+import { ComplaintComponent } from './complaint/complaint/complaint.component';
+import { HeaderComponent } from './composants/header/header.component';
+import { TeamComponent } from './composants/team/team.component';
 @NgModule({
   declarations: [
     AppComponent,
     BoutiquesComponent,
     ProduitsComponent,
-    ServiceComponent
+    CommandeComponent,
+    ComplaintComponent,
+    HeaderComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,
