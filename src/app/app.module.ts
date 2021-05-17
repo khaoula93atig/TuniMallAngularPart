@@ -9,6 +9,8 @@ import { CommandeComponent } from './commande/commande/commande.component';
 import { ComplaintComponent } from './complaint/complaint/complaint.component';
 import { HeaderComponent } from './composants/header/header.component';
 import { TeamComponent } from './composants/team/team.component';
+import { LivreurComponent } from './livreur/livreur/livreur.component';
+import { AuthComponent } from './authentification/auth/auth.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +19,9 @@ import { TeamComponent } from './composants/team/team.component';
     CommandeComponent,
     ComplaintComponent,
     HeaderComponent,
-    TeamComponent
+    TeamComponent,
+    LivreurComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
