@@ -11,6 +11,7 @@ import { HeaderComponent } from './composants/header/header.component';
 import { TeamComponent } from './composants/team/team.component';
 import { LivreurComponent } from './livreur/livreur/livreur.component';
 import { AuthComponent } from './authentification/auth/auth.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { AuthComponent } from './authentification/auth/auth.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
