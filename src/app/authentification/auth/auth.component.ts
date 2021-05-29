@@ -10,9 +10,9 @@ import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.scss']
+  styleUrls: ['./auth.component.css']
 })
-export class LoginComponent implements OnInit {
+export class AuthComponent implements OnInit {
 
   loginForm = new FormGroup({
     email: new FormControl(null, [Validators.required]),

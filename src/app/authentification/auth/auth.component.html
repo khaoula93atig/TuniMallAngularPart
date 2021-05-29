@@ -1,12 +1,12 @@
 <div class="container pt-3 align-items-center mt-4 mb-4 " >
-  <mat-card class="text-white w-100" >
-    <mat-card-header class="pt-3" style="background-color:#0B5BE3 ;">
-      <mat-card-title>
+  <div class="text-white w-100" >
+    <div class="pt-3" style="background-color:#0B5BE3 ;">
+      <div>
         SING IN
-      </mat-card-title>
-    </mat-card-header>
+      </div>
+    </div>>
 
-    <mat-card-content  class="p-3" style="background-color:#009EFB ">
+    <div  class="p-3" style="background-color:#009EFB ">
 
 
       <form [formGroup]="loginForm" (ngSubmit)="signIn()">
@@ -38,32 +38,23 @@
           <input
             formControlName="encryptedPassword"
             type="password"
-            [ngClass]="{
-              'is-valid': loginForm.get('encryptedPassword').valid,
-              'is-invalid': loginForm.get('encryptedPassword').invalid  && (loginForm.get('encryptedPassword').touched || loginForm.get('encryptedPassword').dirty)
-            }"
+
             class="form-control"
             id="encryptedPassword"
           >
 
-          <div
-            *ngIf="loginForm.get('encryptedPassword').invalid && (loginForm.get('encryptedPassword').touched || loginForm.get('encryptedPassword').dirty)"
-            Class="invalid-feedback"
-          >
-            <div *ngIf="loginForm.get('encryptedPassword').getError('required')">Password is Required !</div>
-            <div *ngIf="loginForm.get('encryptedPassword').getError('minlength')">Password was to be 8 Caracters !</div>
-          </div>
+
         </div>
 
-  <mat-card-actions  >
+  <div>
     <div class="row ">
-        <button [disabled]="loginForm.invalid" mat-dialog-close (click)="signIn()" style="background-color: #0B5BE3; color: white " class="btn col-4 offset-7 ">SING IN</button>
+        <button  mat-dialog-close (click)="signIn()" style="background-color: #0B5BE3; color: white " class="btn col-4 offset-7 ">SING IN</button>
     </div>
-  </mat-card-actions>
+  </div>
 
       </form>
 
 
-    </mat-card-content>
-  </mat-card>
+    </div>
+  </div>
   </div>

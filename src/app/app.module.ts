@@ -11,7 +11,10 @@ import { HeaderComponent } from './composants/header/header.component';
 import { TeamComponent } from './composants/team/team.component';
 import { LivreurComponent } from './livreur/livreur/livreur.component';
 import { AuthComponent } from './authentification/auth/auth.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { JwtInterceptor } from './authentification/jwt.interceptor';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,9 +30,15 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS,
+    useClass: JwtInterceptor,
+    multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
