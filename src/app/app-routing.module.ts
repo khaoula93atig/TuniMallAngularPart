@@ -14,6 +14,7 @@ const routes: Routes = [
   {path: 'apropos', component: TeamComponent},
   {path: 'login', component: AuthComponent},
   {path: 'service', component: ComplaintComponent}
+
 ];
 
 @NgModule({

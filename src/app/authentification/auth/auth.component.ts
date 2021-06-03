@@ -2,10 +2,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-//import { ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 import {TokenService} from '../token.service';
 import {AccountService} from '../account.service';
 import { AuthService } from '../auth.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-auth',
@@ -15,8 +16,8 @@ import { AuthService } from '../auth.service';
 export class AuthComponent implements OnInit {
 
   loginForm = new FormGroup({
-    email: new FormControl(null, [Validators.required]),
-    encryptedPassword: new FormControl(null, [Validators.required, Validators.minLength(8)])
+    username: new FormControl(null, [Validators.required]),
+    password: new FormControl(null, [Validators.required, Validators.minLength(4)])
   });
 
   constructor(
@@ -24,10 +25,12 @@ export class AuthComponent implements OnInit {
     private token: TokenService,
     private account: AccountService,
     private router: Router,
-    //private toastr:
+    private http: HttpClient,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
+
   }
 
   signIn() {
@@ -35,7 +38,7 @@ export class AuthComponent implements OnInit {
     this.authService.login(this.loginForm.value)
       .subscribe(
         res => this.handleResponse(res),
-        /*err => this.toastr.error
+        err => this.toastr.error
         (
           `Erreur`,
           'Merci de Vérifier votre email ou mot de passe !',
@@ -43,21 +46,21 @@ export class AuthComponent implements OnInit {
             timeOut: 3000,
             positionClass: 'toast-bottom-left'
           }
-        )*/)
+        ))
   }
 
   handleResponse(data) {
     this.token.handle(data);
     this.account.changeAuthStatus(true);
-    /*this.toastr.success(
-      `Bienvenu : ${ this.token.getInfos().name }`,
+    this.toastr.success(
+      `Bienvenu : ${ this.token.getInfos().nom }`,
       'Vous êtes connectés !',
       {
         timeOut: 3000,
         positionClass: 'toast-bottom-left'
       }
-    )*/;
-    this.router.navigateByUrl('/');
+    );
+    this.router.navigate(['produit']);
   }
 
 }

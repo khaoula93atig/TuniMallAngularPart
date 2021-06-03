@@ -9,7 +9,7 @@ import { USER } from './user';
 })
 export class AuthService {
 
-  private apiServer = "localhost:3000/user/login";
+  private apiServer = "http://localhost:3000/user/login";
 
   httpOptions = {
     headers: new HttpHeaders({

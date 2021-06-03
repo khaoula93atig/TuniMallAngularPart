@@ -14,6 +14,8 @@ import { AuthComponent } from './authentification/auth/auth.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { JwtInterceptor } from './authentification/jwt.interceptor';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { AdminComponent } from './administration/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +27,17 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
     HeaderComponent,
     TeamComponent,
     LivreurComponent,
-    AuthComponent
+    AuthComponent,
+    AdminComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,

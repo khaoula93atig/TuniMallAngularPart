@@ -8,7 +8,7 @@ export class TokenService {
   constructor() { }
 
   set(data: any) {
-    localStorage.setItem('token', data.token);
+    localStorage.setItem('token', data.access_token);
     localStorage.setItem('id', data.id);
   }
 

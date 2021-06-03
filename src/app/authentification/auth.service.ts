@@ -8,7 +8,11 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  login(auth: {email: string, password: string}) {
-    return this.http.post("localhost:3000/user/login", auth);
+  login(auth: {username: string, password: string}) {
+    return this.http.post("http://localhost:3000/user/login", auth);
+  }
+
+  logout() {
+    localStorage.removeItem('token');
   }
 }
