@@ -16,8 +16,10 @@ const routes: Routes = [
   {path: 'boutique', component: BoutiquesComponent},
   {path: 'apropos', component: TeamComponent},
   {path: 'login', component: AuthComponent},
+
   {path: 'service', component: ComplaintComponent},
   {path: 'commande',component: CommandeComponent}
+  {path: 'service', component: ComplaintComponent}
 ];
 
 @NgModule({
