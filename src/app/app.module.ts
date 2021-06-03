@@ -30,6 +30,7 @@ import { HomeComponent } from './home/home.component';
     TeamComponent,
     LivreurComponent,
     AuthComponent,
+    HomeComponent,
     AdminComponent,
     HomeComponent
 
