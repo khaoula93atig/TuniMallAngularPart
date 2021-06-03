@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './authentification/auth/auth.component';
@@ -8,12 +9,13 @@ import { TeamComponent } from './composants/team/team.component';
 import { ProduitsComponent } from './produit/produits/produits.component';
 
 const routes: Routes = [
-  {path: '', component: HeaderComponent},
+  {path: '', component: HomeComponent},
   {path: 'produit', component: ProduitsComponent},
   {path: 'boutique', component: BoutiquesComponent},
   {path: 'apropos', component: TeamComponent},
   {path: 'login', component: AuthComponent},
-  {path: 'service', component: ComplaintComponent}
+  {path: 'service', component: ComplaintComponent},
+  {path: 'auth', component: AuthComponent}
 
 ];
 
