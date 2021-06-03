@@ -17,8 +17,6 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { AdminComponent } from './administration/admin/admin.component';
 
-import { HomeComponent } from './home/home.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,9 +28,7 @@ import { HomeComponent } from './home/home.component';
     TeamComponent,
     LivreurComponent,
     AuthComponent,
-    HomeComponent,
     AdminComponent,
-    HomeComponent
 
   ],
   imports: [
