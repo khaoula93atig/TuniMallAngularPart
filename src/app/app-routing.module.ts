@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: 'login', component: AuthComponent},
 
   {path: 'service', component: ComplaintComponent},
-  {path: 'commande',component: CommandeComponent}
+  {path: 'commande',component: CommandeComponent},
   {path: 'service', component: ComplaintComponent}
 ];
 

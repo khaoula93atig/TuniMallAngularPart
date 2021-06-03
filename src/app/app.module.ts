@@ -29,7 +29,7 @@ import { AdminComponent } from './administration/admin/admin.component';
     TeamComponent,
     LivreurComponent,
     AuthComponent,
-    HomeComponent
+    HomeComponent,
     AdminComponent,
   ],
   imports: [
