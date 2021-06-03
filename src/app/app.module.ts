@@ -11,6 +11,7 @@ import { HeaderComponent } from './composants/header/header.component';
 import { TeamComponent } from './composants/team/team.component';
 import { LivreurComponent } from './livreur/livreur/livreur.component';
 import { AuthComponent } from './authentification/auth/auth.component';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { AuthComponent } from './authentification/auth/auth.component';
     HeaderComponent,
     TeamComponent,
     LivreurComponent,
-    AuthComponent
+    AuthComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
