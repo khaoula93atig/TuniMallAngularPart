@@ -1,5 +1,3 @@
-import { HomeComponent } from './home/home.component';
-import { CommandeComponent } from './commande/commande/commande.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './authentification/auth/auth.component';

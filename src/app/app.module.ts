@@ -16,6 +16,7 @@ import { JwtInterceptor } from './authentification/jwt.interceptor';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { AdminComponent } from './administration/admin/admin.component';
+
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
@@ -31,6 +32,7 @@ import { HomeComponent } from './home/home.component';
     AuthComponent,
     AdminComponent,
     HomeComponent
+
   ],
   imports: [
     BrowserModule,
