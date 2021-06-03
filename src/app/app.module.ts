@@ -11,7 +11,6 @@ import { HeaderComponent } from './composants/header/header.component';
 import { TeamComponent } from './composants/team/team.component';
 import { LivreurComponent } from './livreur/livreur/livreur.component';
 import { AuthComponent } from './authentification/auth/auth.component';
-import { HomeComponent } from './home/home.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { JwtInterceptor } from './authentification/jwt.interceptor';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
@@ -29,8 +28,8 @@ import { AdminComponent } from './administration/admin/admin.component';
     TeamComponent,
     LivreurComponent,
     AuthComponent,
-    HomeComponent
     AdminComponent,
+
   ],
   imports: [
     BrowserModule,
