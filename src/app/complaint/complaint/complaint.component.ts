@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ComplainTypeEnum } from 'src/app/enums/complain-type.enum';
-import { complainEntity } from '../complaint';
+import { complainEntity } from '../../model/complaint';
 import { ComplaintService } from '../complaint.service';
 
 @Component({

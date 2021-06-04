@@ -1,4 +1,5 @@
 import { USER } from "./user";
+import { produitEntity } from "./produit";
 
 export class livraisonEntity {
 
@@ -19,8 +20,6 @@ terminer: boolean;
 
 livreur: USER;
 
-/*@ManyToOne( type=>produitEntity, (produit)=> produit.livraisons, {
-    nullable: true ,  eager: true
-})
-produit: produitEntity;*/
+
+produit: produitEntity;
 }

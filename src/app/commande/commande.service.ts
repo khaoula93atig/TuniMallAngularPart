@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { livraisonEntity } from '../authentification/livraison';
+import { livraisonEntity } from '../model/livraison';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +25,7 @@ export class CommandeService {
 
   }
   create(livraison:livraisonEntity): Observable<livraisonEntity> {
-    return this.http.post<livraisonEntity>(this.apiServer ,JSON.stringify(livraisonEntity), this.httpOptions)
+    return this.http.post<livraisonEntity>(this.apiServer ,JSON.stringify(livraison), this.httpOptions)
       .pipe(
         catchError(this.errorHandler)
       )

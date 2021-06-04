@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/authentification/user.service';
-import { livraisonEntity } from 'src/app/authentification/livraison';
+import { livraisonEntity } from 'src/app/model/livraison';
 import { CommandeService } from '../commande.service';
 
 @Component({
