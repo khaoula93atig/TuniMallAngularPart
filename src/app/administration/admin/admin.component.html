@@ -23,8 +23,8 @@
         <th>{{user.email}}</th>
         <th>{{user.username}}</th>
         <th>
-            <button><a>update</a></button>
-            <button><a>delete</a></button>
+            <button (click)="updateUser()"><a id="{{user.id}}">update</a></button>
+            <button><a id="{{user.id}}">delete</a></button>
         </th>
     </tr>
 </table>

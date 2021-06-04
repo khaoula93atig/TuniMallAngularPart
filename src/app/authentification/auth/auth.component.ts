@@ -60,7 +60,11 @@ export class AuthComponent implements OnInit {
         positionClass: 'toast-bottom-left'
       }
     );
-    this.router.navigate(['auth', data.user.id]);
+    if(data.user.role=="adminachat" || data.user.role=="adminajout"){
+    this.router.navigate(['login/admin', data.user.role]);
+  }else{
+    this.router.navigate(['login/livreur', data.user.role]);
+  }
   }
 
 }
