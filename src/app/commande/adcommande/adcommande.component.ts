@@ -34,12 +34,7 @@ export class AdcommandeComponent implements OnInit {
   getall(){
     this.commandeService.getAll().subscribe(data =>{
       this.listcommande =data
-      console.log(data);
-
     }
       )
   }
-
-
-
 }

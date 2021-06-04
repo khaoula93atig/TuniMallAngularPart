@@ -1,24 +1,24 @@
-<table *ngIf="role" class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">id</th>
-      <th scope="col">prix</th>
-      <th scope="col">produit</th>
-      <th scope="col">adresse</th>
-      <th scope="col">livreur</th>
-      <th scope="col">approuver</th>
-      <th scope="col">terminer</th>
-    </tr>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">prix</th>
+            <th scope="col">produit</th>
+            <th scope="col">adresse</th>
+            <th scope="col">livreur</th>
+            <th scope="col">approuver</th>
+            <th scope="col">terminer</th>
+        </tr>
 
-  </thead>
+    </thead>
     <tr scope="row" *ngFor="let l of listcommande">
-    <td>{{l.id}}</td>
-    <td>{{l.cout}}</td>
-    <td>{{l.nom}}</td>
-    <td>{{l.adresse}}</td>
-    <td>{{l.livreur.nom}}</td>
-    <td>{{l.approuver}}</td>
-    <td>{{l.terminer}}</td>
+        <td>{{l.id}}</td>
+        <td>{{l.cout}}</td>
+        <td>{{l.nom}}</td>
+        <td>{{l.adresse}}</td>
+        <td>{{l.livreur.nom}}</td>
+        <td>{{l.approuver}}</td>
+        <td>{{l.terminer}}</td>
     </tr>
 
 </table>

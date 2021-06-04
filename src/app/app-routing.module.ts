@@ -9,7 +9,6 @@ import { ComplaintComponent } from './complaint/complaint/complaint.component';
 import { HeaderComponent } from './composants/header/header.component';
 import { TeamComponent } from './composants/team/team.component';
 import { ProduitsComponent } from './produit/produits/produits.component';
-import { CommandeComponent } from './commande/commande/commande.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -18,14 +17,9 @@ const routes: Routes = [
   {path: 'apropos', component: TeamComponent},
   {path: 'login', component: AuthComponent},
   {path: 'service', component: ComplaintComponent},
-  {path: 'commande/:id',component: CommandeComponent}
+  {path: 'commande/:id',component: CommandeComponent},
   {path: 'commande', component: CommandeComponent},
-  {path:'auth',
-    children :
-    [
-      { path: ':id', component:CommandeComponent}
-    ]  },
-
+  {path:'auth',children :[{ path: ':id', component:CommandeComponent}]},
   {path: 'admin', component: AdminComponent}
 ];
 
