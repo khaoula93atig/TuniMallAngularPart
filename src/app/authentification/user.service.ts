@@ -26,6 +26,13 @@ export class AuthService {
       )
   }
 
+  getbyid(user:USER,id:string): Observable<USER> {
+    return this.http.get<USER>(this.apiServer+id)
+      .pipe(
+        catchError(this.errorHandler)
+      )
+  }
+
 
 
   errorHandler(error: { error: { message: string; }; status: any; message: any; }) {
