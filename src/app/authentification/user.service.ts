@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
-import { USER } from './user';
+import { USER } from '../model/user';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +21,13 @@ export class AuthService {
 
   login(user:USER): Observable<USER> {
     return this.http.post<USER>(this.apiServer ,JSON.stringify(user), this.httpOptions)
+      .pipe(
+        catchError(this.errorHandler)
+      )
+  }
+
+  getbyid(user:USER,id:string): Observable<USER> {
+    return this.http.get<USER>(this.apiServer+id)
       .pipe(
         catchError(this.errorHandler)
       )

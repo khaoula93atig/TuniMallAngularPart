@@ -53,14 +53,14 @@ export class AuthComponent implements OnInit {
     this.token.handle(data);
     this.account.changeAuthStatus(true);
     this.toastr.success(
-      `Bienvenu : ${ this.token.getInfos().nom }`,
+      `Bienvenu : ${ this.token.getInfos().username }`,
       'Vous êtes connectés !',
       {
         timeOut: 3000,
         positionClass: 'toast-bottom-left'
       }
     );
-    this.router.navigate(['produit']);
+    this.router.navigate(['auth', data.user.id]);
   }
 
 }

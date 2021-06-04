@@ -9,7 +9,7 @@ export class TokenService {
 
   set(data: any) {
     localStorage.setItem('token', data.access_token);
-    localStorage.setItem('id', data.id);
+    localStorage.setItem('id', data.user);
   }
 
   handle(data) {
@@ -57,8 +57,9 @@ export class TokenService {
   getInfos() {
 
     const token = this.getToken();
+    const user =this.getId();
 
-    if (token) {
+    if (token&&user) {
       const payload = this.payload(token);
       return payload ? payload : null;
     }
