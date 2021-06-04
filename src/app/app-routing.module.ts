@@ -1,3 +1,4 @@
+import { CommandeComponent } from './commande/commande/commande.component';
 import { AdminComponent } from './administration/admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'apropos', component: TeamComponent},
   {path: 'login', component: AuthComponent},
   {path: 'service', component: ComplaintComponent},
-  {path: 'admin', component: AdminComponent}
+  {path: 'admin', component: AdminComponent},
+   {path: 'commande/:id',component: CommandeComponent}
 
 ];
 

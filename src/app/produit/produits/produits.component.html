@@ -4,14 +4,14 @@
             <h2 class="text-uppercase section-heading">nos produits</h2>
         </div>
     </div>
-    <div *ngFor="let item of data" class="card">
+    <div *ngFor="let produit of produits" class="card">
         <div>
-            <img src={{item.path}} t="Denim Jeans" style="width:100%">
-            <h1>{{item.nom}}</h1>
-            <p class="price">{{item.price}}</p>
-            <p>color : {{item.color}}</p>
-            <p>marque : {{item.shop.name}}</p>
-            <a routerLink="/commande"><button> commander</button></a>
+            <img src={{produit.path}} t="{{produit.nom}}" style="width:100%">
+            <h1>{{produit.nom}}</h1>
+            <p class="price">{{produit.price}}</p>
+            <p>color : {{produit.color}}</p>
+            <p>marque : {{produit.shop.name}}</p>
+            <button id="{{produit.codeBar}} "><a [routerLink]="['/commande',produit.codeBar]">commander</a></button>
         </div>
     </div>
 </div>

@@ -47,5 +47,6 @@ import { HomeComponent } from './home/home.component';
     multi: true}
   ],
   bootstrap: [AppComponent]
-})
+}
+)
 export class AppModule { }

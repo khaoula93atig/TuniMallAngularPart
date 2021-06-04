@@ -1,4 +1,4 @@
-import { ProduitService } from './produit/produits/produit.service';
+import { ProduitService } from './produit/produit.service';
 import { Component } from '@angular/core';
 
 @Component({

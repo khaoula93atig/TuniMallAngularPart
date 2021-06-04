@@ -13,14 +13,19 @@
         <th>cin</th>
         <th>email</th>
         <th>username</th>
-    </tr>
-    <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
         <th></th>
     </tr>
-
+    <tr *ngFor="let user of users">
+        <th>{{user.nom}}</th>
+        <th>{{user.prenom}}</th>
+        <th>{{user.sexe}}</th>
+        <th>{{user.cin}}</th>
+        <th>{{user.email}}</th>
+        <th>{{user.username}}</th>
+        <th>
+            <button><a>update</a></button>
+            <button><a>delete</a></button>
+        </th>
+    </tr>
 </table>
+<button><a>add</a></button>
