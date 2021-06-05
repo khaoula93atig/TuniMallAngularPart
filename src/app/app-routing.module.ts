@@ -1,3 +1,4 @@
+import { UpdateComponent } from './administration/user/update/update.component';
 import { LivreurComponent } from './livreur/livreur/livreur.component';
 import { CommandeComponent } from './commande/commande/commande.component';
 import { AdminComponent } from './administration/admin/admin.component';
@@ -9,6 +10,7 @@ import { BoutiquesComponent } from './boutique/boutiques/boutiques.component';
 import { ComplaintComponent } from './complaint/complaint/complaint.component';
 import { TeamComponent } from './composants/team/team.component';
 import { ProduitsComponent } from './produit/produits/produits.component';
+import { UserComponent } from './administration/user/user.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -21,7 +23,9 @@ const routes: Routes = [
   {path: 'commande/:id',component: CommandeComponent},
   {path: 'commande', component: CommandeComponent},
   {path:'auth',children :[{ path: ':id', component:CommandeComponent}]},
-  {path: 'admin', component: AdminComponent}
+  {path: 'admin', component: AdminComponent},
+  {path: 'admin/user/add', component: UserComponent},
+  {path: 'admin/user/update', component: UpdateComponent}
 ];
 
 @NgModule({

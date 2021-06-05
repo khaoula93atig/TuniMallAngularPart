@@ -1,6 +1,4 @@
-import { USER } from './../../model/user';
-import { ActivatedRoute } from '@angular/router';
-import { AdcommandeComponent } from './../../commande/adcommande/adcommande.component';
+import { UserService } from '../user/user.service';
 import { AdminService } from './../admin.service';
 import { ProduitService } from './../../produit/produit.service';
 import { CommandeService } from 'src/app/commande/commande.service';
@@ -15,23 +13,20 @@ export class AdminComponent implements OnInit {
   users:any;
   commandes:any;
   role:any;
-  user:USER;
   id:any;
   constructor(private produit:ProduitService,
     private userService:AdminService,
-    private command:CommandeService) { }
+    private command:CommandeService,
+    private user:UserService) { }
   ngOnInit(): void {
     this.produit.getProduits().subscribe((result)=>{
       this.produits=result
     })
-    this.userService.getUsers().subscribe((result)=>{
+    this.user.getUsers().subscribe((result)=>{
       this.users=result
     })
     this.command.getAll().subscribe((result)=>{
       this.commandes=result
     })
-  }
-  updateUser(){
-    this.userService.updateUser(this.user,this.id)
   }
 }
