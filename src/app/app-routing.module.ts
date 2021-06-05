@@ -10,6 +10,8 @@ import { ComplaintComponent } from './complaint/complaint/complaint.component';
 import { TeamComponent } from './composants/team/team.component';
 import { ProduitsComponent } from './produit/produits/produits.component';
 import { DetailscommandeComponent } from './commande/detailscommande/detailscommande.component';
+import { UserComponent } from './administration/user/user.component';
+
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -19,12 +21,20 @@ const routes: Routes = [
   {path: 'login',component:AuthComponent},
   {path: 'login',children:[ {path: 'admin/:role',component: AdminComponent},{path:'livreur/:role',component: LivreurComponent}]},
   {path: 'complain', component: ComplaintComponent},
+
   {path:'commande',children: [
     {path:':id',component: CommandeComponent},
     {path:'detail/:id',component:DetailscommandeComponent}
 ]},
   //{path:'auth',children :[{ path: ':id', component:CommandeComponent}]},
-  {path: 'admin', component: AdminComponent}
+  {path: 'admin', component: AdminComponent},
+
+  {path: 'commande/:id',component: CommandeComponent},
+  {path: 'commande', component: CommandeComponent},
+  {path:'auth',children :[{ path: ':id', component:CommandeComponent}]},
+  {path: 'admin', component: AdminComponent},
+  {path: 'admin/user/add', component: UserComponent},
+
 ];
 
 @NgModule({

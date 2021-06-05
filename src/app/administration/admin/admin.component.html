@@ -1,49 +1,47 @@
-<div class="vertical-menu">
-    <a href="#users">users</a>
-    <a href="#commandes">commandes</a>
-    <a href="#ivreurs">Link 3</a>
-    <a href="#shops">Link 4</a>
-    <a href="#produits">Link 5</a>
-</div>
-<table id='users' style="width:100%">
-    <tr>
-        <th>nom</th>
-        <th>prenom</th>
-        <th>sexe</th>
-        <th>cin</th>
-        <th>email</th>
-        <th>username</th>
-        <th></th>
-    </tr>
-    <tr *ngFor="let user of users">
-        <th>{{user.nom}}</th>
-        <th>{{user.prenom}}</th>
-        <th>{{user.sexe}}</th>
-        <th>{{user.cin}}</th>
-        <th>{{user.email}}</th>
-        <th>{{user.username}}</th>
-        <th>
-            <button (click)="updateUser()"><a id="{{user.id}}">update</a></button>
-            <button><a id="{{user.id}}">delete</a></button>
-        </th>
-    </tr>
-</table>
-<button><a>add</a></button>
-
-<app-adcommande></app-adcommande>
-<!-- <table class="table">
-    <thead class="thead-dark">
+<ul>
+    <li><a class="active" href="admin/#users">users</a></li>
+    <li><a href="admin/#commands">Commands</a></li>
+</ul>
+<div style="margin-left:10%;padding:1px 16px;height:1000px;">
+    <table id='users' style=" width:100% ">
         <tr>
-            <th scope="col">id</th>
-            <th scope="col">prix</th>
-            <th scope="col">produit</th>
-            <th scope="col">adresse</th>
-            <th scope="col">livreur</th>
-            <th scope="col">approuver</th>
-            <th scope="col">terminer</th>
+            <th>nom</th>
+            <th>prenom</th>
+            <th>sexe</th>
+            <th>cin</th>
+            <th>email</th>
+            <th>username</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let user of users ">
+            <th>{{user.nom}}</th>
+            <th>{{user.prenom}}</th>
+            <th>{{user.sexe}}</th>
+            <th>{{user.cin}}</th>
+            <th>{{user.email}}</th>
+            <th>{{user.username}}</th>
+            <th>
+                <button (click)="updateUser() "><a [routerLink]="['user/update']">update</a></button>
+                <button><a>delete</a></button>
+            </th>
+        </tr>
+    </table>
+    <button><a [routerLink]="['user/add']">add user</a></button>
+    <app-adcommande></app-adcommande>
+</div>
+<!-- <table class="table ">
+    <thead class="thead-dark ">
+        <tr>
+            <th scope="col ">id</th>
+            <th scope="col ">prix</th>
+            <th scope="col ">produit</th>
+            <th scope="col ">adresse</th>
+            <th scope="col ">livreur</th>
+            <th scope="col ">approuver</th>
+            <th scope="col ">terminer</th>
         </tr>
     </thead>
-    <tr scope="row" *ngFor="let l of commandes">
+    <tr scope="row " *ngFor="let l of commandes ">
         <td>{{l.id}}</td>
         <td>{{l.cout}}</td>
         <td>{{l.nom}}</td>

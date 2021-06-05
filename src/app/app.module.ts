@@ -18,7 +18,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { AdminComponent } from './administration/admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { AdcommandeComponent } from './commande/adcommande/adcommande.component';
+
 import { DetailscommandeComponent } from './commande/detailscommande/detailscommande.component';
+import { UserComponent } from './administration/user/user.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +37,11 @@ import { DetailscommandeComponent } from './commande/detailscommande/detailscomm
     AdminComponent,
     HomeComponent,
     AdcommandeComponent,
+
     DetailscommandeComponent,
+
+    UserComponent,
+
 
   ],
   imports: [

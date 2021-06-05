@@ -16,34 +16,11 @@ export class AdminService {
     })
   }
   constructor(private http:HttpClient) { 
-
+    
   }
+  users: any;
+  currentUser = null;
+  currentIndex = -1;
+  id = '';
   
-  getUsers(){
-      return this.http.get(this.url);
-    }
-  getbyUserid(user:USER,id:string): Observable<USER> {
-      return this.http.get<USER>(this.url+id)
-        .pipe(
-          catchError(this.errorHandler)
-        )
-    }
-    errorHandler(error: { error: { message: string; }; status: any; message: any; }) {
-      let errorMessage = '';
-      if(error.error instanceof ErrorEvent) {
-        // Get client-side error
-        errorMessage = error.error.message;
-      } else {
-        // Get server-side error
-        errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-      }
-      console.log(errorMessage);
-      return throwError(errorMessage);
-    }
-    updateUser( user:USER, id :string): Observable<USER> {
-      return this.http.put<USER>(this.url + id , JSON.stringify(user),this.httpOptions)
-        .pipe(
-          catchError(this.errorHandler)
-        )
-    }
 }
