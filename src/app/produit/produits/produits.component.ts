@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProduitsComponent implements OnInit {
   produits:any;
-  constructor(private produit:ProduitService) { 
+  constructor(private produit:ProduitService) {
   }
   ngOnInit(): void {
     this.produit.getProduits().subscribe((result)=>{

@@ -11,9 +11,11 @@ adresse: string;
 
 email: string;
 
+nom: string;
 
+ prenom: string;
 approuver: boolean;
-
+quantiteProduit:number;
 
 terminer: boolean;
 

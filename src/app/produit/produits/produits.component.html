@@ -6,12 +6,12 @@
     </div>
     <div *ngFor="let produit of produits" class="card">
         <div>
-            <img src={{produit.path}} t="{{produit.nom}}" style="width:100%">
+            <img src="{{produit.path}}" t="{{produit.nom}}" style="width:100%">
             <h1>{{produit.nom}}</h1>
             <p class="price">{{produit.price}}</p>
             <p>color : {{produit.color}}</p>
             <p>marque : {{produit.shop.name}}</p>
-            <button id="{{produit.codeBar}} "><a [routerLink]="['/commande',produit.codeBar]">commander</a></button>
+            <button [routerLink]="['/commande',produit.codeBar]">commander</button>
         </div>
     </div>
 </div>
