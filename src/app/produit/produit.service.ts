@@ -30,6 +30,24 @@ export class ProduitService {
           catchError(this.errorHandler)
         )
   }
+  getProduit(id): Observable<any> {
+    return this.http.get(`${this.url}/${id}`);
+  }
+
+  createProduit(data): Observable<any> {
+    return this.http.post(this.url, data);
+  }
+
+  updateProduit(id, data): Observable<any> {
+    return this.http.put(`${this.url}/${id}`, data);
+  }
+
+  deleteProduit(id): Observable<any> {
+    return this.http.delete(`${this.url}/${id}`);
+  }
+  searchById(id): Observable<any> {
+    return this.http.get(`${this.url}?name=${id}`);
+  }
 
     errorHandler(error: { error: { message: string; }; status: any; message: any; }) {
       let errorMessage = '';

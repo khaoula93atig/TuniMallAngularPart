@@ -4,15 +4,17 @@
 </ul>
 <div style="margin-left:10%;padding:1px 16px;height:1000px;">
     <table id='users' style=" width:100% ">
-        <tr>
-            <th>nom</th>
-            <th>prenom</th>
-            <th>sexe</th>
-            <th>cin</th>
-            <th>email</th>
-            <th>username</th>
-            <th></th>
-        </tr>
+        <thead class="thead-dark">
+            <tr>
+                <th>nom</th>
+                <th>prenom</th>
+                <th>sexe</th>
+                <th>cin</th>
+                <th>email</th>
+                <th>username</th>
+                <th></th>
+            </tr>
+        </thead>
         <tr *ngFor="let user of users ">
             <th>{{user.nom}}</th>
             <th>{{user.prenom}}</th>
@@ -28,6 +30,57 @@
     </table>
     <button><a [routerLink]="['user/add']">add user</a></button>
     <app-adcommande></app-adcommande>
+    <table id='boutiques' style=" width:100% ">
+        <thead class="thead-dark">
+            <tr>
+                <th>nom</th>
+                <th>path</th>
+                <th>image</th>
+            </tr>
+        </thead>
+        <tr *ngFor="let boutique of boutiques ">
+            <th>{{boutique.nom}}</th>
+            <th>{{boutique.path}}</th>
+            <th>{{boutique.immage}}</th>
+            <th>
+                <button (click)="updateUBoutique() "><a [routerLink]="['boutique/update']">update</a></button>
+                <button><a>delete</a></button>
+            </th>
+        </tr>
+    </table>
+    <button><a [routerLink]="['boutique/add']">add shop</a></button>
+    <table id='boutiques' style=" width:100% ">
+        <thead class="thead-dark">
+            <tr>
+                <th>nom</th>
+                <th>type</th>
+                <th>categorie</th>
+                <th>price</th>
+                <th>couleur</th>
+                <th>quantite</th>
+                <th>image</th>
+                <th>codeBar</th>
+                <th>shopNom</th>
+            </tr>
+        </thead>
+        <tr *ngFor="let produit of produits ">
+            <th>{{produit.nom}}</th>
+            <th>{{produit.type}}</th>
+            <th>{{produit.categorie}}</th>
+            <th>{{produit.price}} DT</th>
+            <th>{{produit.couleur}}</th>
+            <th>{{produit.quantite}}</th>
+            <th><img src="{{produit.image}}"></th>
+            <th>{{produit.codeBar}}</th>
+            <th>{{produit.shop.nom}}</th>
+
+            <th>
+                <button (click)="updateProduit() "><a [routerLink]="['boutique/update']">update</a></button>
+                <button><a>delete</a></button>
+            </th>
+        </tr>
+    </table>
+    <button><a [routerLink]="['produit/add']">add produit</a></button>
 </div>
 <!-- <table class="table ">
     <thead class="thead-dark ">

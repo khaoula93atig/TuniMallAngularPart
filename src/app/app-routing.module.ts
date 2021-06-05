@@ -1,3 +1,5 @@
+import { AddproduitComponent } from './administration/produit/addproduit/addproduit.component';
+import { AddBoutiqueComponent } from './administration/boutique/add-boutique/add-boutique.component';
 import { LivreurComponent } from './livreur/livreur/livreur.component';
 import { CommandeComponent } from './commande/commande/commande.component';
 import { AdminComponent } from './administration/admin/admin.component';
@@ -34,6 +36,8 @@ const routes: Routes = [
   {path:'auth',children :[{ path: ':id', component:CommandeComponent}]},
   {path: 'admin', component: AdminComponent},
   {path: 'admin/user/add', component: UserComponent},
+  {path: 'admin/boutique/add', component: AddBoutiqueComponent},
+  {path: 'admin/produit/add', component: AddproduitComponent},
 
 ];
 
