@@ -19,7 +19,6 @@ import { AdminComponent } from './administration/admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { AdcommandeComponent } from './commande/adcommande/adcommande.component';
 import { UserComponent } from './administration/user/user.component';
-import { UpdateComponent } from './administration/user/update/update.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +35,6 @@ import { UpdateComponent } from './administration/user/update/update.component';
     HomeComponent,
     AdcommandeComponent,
     UserComponent,
-    UpdateComponent,
 
   ],
   imports: [
