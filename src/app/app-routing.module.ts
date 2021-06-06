@@ -18,13 +18,17 @@ const routes: Routes = [
   {path: 'produit', component: ProduitsComponent},
   {path: 'boutique', component: BoutiquesComponent},
   {path: 'apropos', component: TeamComponent},
-  {path: 'login',component:AuthComponent},
-  {path: 'login',children:[ {path: 'admin/:role',component: AdminComponent},{path:'livreur/:role',component: LivreurComponent}]},
+  {path: 'login',
+    children:[
+      { path: '', component: AuthComponent },
+      {path: 'admin/:role',component: AdminComponent},
+      {path:'livreur/:role',component: LivreurComponent},
+]},
   {path: 'complain', component: ComplaintComponent},
-
+  {path:'detail/:id',component:DetailscommandeComponent},
   {path:'commande',children: [
     {path:':id',component: CommandeComponent},
-    {path:'detail/:id',component:DetailscommandeComponent}
+
 ]},
   //{path:'auth',children :[{ path: ':id', component:CommandeComponent}]},
   {path: 'admin', component: AdminComponent},

@@ -9,7 +9,7 @@ import { livraisonEntity } from '../model/livraison';
 })
 export class CommandeService {
 
-  private apiServer = "http://localhost:3000/livraison";
+  private apiServer = "http://localhost:3000/livraison/";
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -30,8 +30,8 @@ export class CommandeService {
         catchError(this.errorHandler)
       )
   }
-  update( livraison:livraisonEntity, id :string): Observable<livraisonEntity> {
-    return this.http.put<livraisonEntity>(this.apiServer + id , JSON.stringify(livraisonEntity),this.httpOptions)
+  update(livraison:livraisonEntity,id :string): Observable<livraisonEntity> {
+    return this.http.put<livraisonEntity>(this.apiServer + id , JSON.stringify(livraison),this.httpOptions)
       .pipe(
         catchError(this.errorHandler)
       )
@@ -42,6 +42,12 @@ export class CommandeService {
         catchError(this.errorHandler)
       )
   }
+  getbyid(id:string): Observable<livraisonEntity> {
+    return this.http.get<livraisonEntity>(this.apiServer+id)
+      .pipe(
+        catchError(this.errorHandler)
+      )
+}
 
   errorHandler(error: { error: { message: string; }; status: any; message: any; }) {
     let errorMessage = '';

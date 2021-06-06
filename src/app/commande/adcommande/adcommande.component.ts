@@ -14,6 +14,7 @@ export class AdcommandeComponent implements OnInit {
   id :any;
   role: "livreur";
   listcommande:livraisonEntity[];
+  commande:livraisonEntity;
   constructor(
     private commandeService : CommandeService,
     private userservice : AuthService,

@@ -9,7 +9,7 @@ import { USER } from '../model/user';
 })
 export class AuthService {
 
-  private apiServer = "http://localhost:3000/user/login";
+  private apiServer = "http://localhost:3000/user/";
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -28,6 +28,12 @@ export class AuthService {
 
   getbyid(user:USER,id:string): Observable<USER> {
     return this.http.get<USER>(this.apiServer+id)
+      .pipe(
+        catchError(this.errorHandler)
+      )
+  }
+  getbyrole(role:string): Observable<USER[]> {
+    return this.http.get<USER[]>(this.apiServer+role)
       .pipe(
         catchError(this.errorHandler)
       )

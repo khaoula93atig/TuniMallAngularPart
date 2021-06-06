@@ -6,7 +6,7 @@
             <th scope="col">produit</th>
             <th scope="col">adresse</th>
             <th scope="col">livreur</th>
-            <th scope="col">approuver</th>
+            <th scope="col">etat</th>
             <th scope="col">terminer</th>
         </tr>
 
@@ -14,11 +14,22 @@
     <tr scope="row" *ngFor="let l of listcommande">
         <td>{{l.id}}</td>
         <td>{{l.cout}}</td>
-        <td>{{l.nom}}</td>
+        <td>{{l.produit.codeBar}}</td>
         <td>{{l.adresse}}</td>
-        <td>{{l.livreur.nom}}</td>
-        <td>{{l.approuver}}</td>
-        <td>{{l.terminer}}</td>
+        <td >
+          <l *ngIf="l.livreur==null">non affectee</l>
+          <l *ngIf="l.livreur!=null">{{l.livreur}}</l>
+
+        </td>
+        <td >
+          <l *ngIf="l.approuver==false && l.terminer== false">en attente</l>
+          <l *ngIf="l.approuver==true && l.terminer==false">en cours</l>
+          <l *ngIf="l.approuver==true && l.terminer==true">livrée</l>
+        </td>
+        <td>
+          <button *ngIf="!role && l.approuver==false" [routerLink]="['/detail',l.id]" type="button" class="btn btn-primary">approuver</button>
+          <button *ngIf="role && l.terminer==false" class="btn btn-primary">terminer</button>
+        </td>
     </tr>
 
 </table>

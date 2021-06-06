@@ -1,1 +1,55 @@
-<p>detailscommande works!</p>
+<div style="background-image:url('../../../assets/img/commandeback2.jpg');">
+  <div class="container" >
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2 class="text-uppercase section-heading">details de la commande </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <form #monFormulaire="ngForm">
+                <div class="form-row">
+                    <div class="col-md-6">
+                      <h4 class="text-uppercase section-heading">coordonnée client</h4>
+
+                        <div class="form-group">
+                          <input ngModel class="form-control" type="text" id="nom" [(ngModel)]="commande.nom" name="nom" [disabled]="true" placeholder="votre nom *" required /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                          <div class="form-group">
+                          <input ngModel class="form-control" type="text" id="prenom" name="prenom" [(ngModel)]="commande.prenom" [disabled]="true" placeholder="votre prenom *" required /><small class="form-text text-danger help-block lead"></small></div>
+                          <div class="form-group">
+                            <input ngModel class="form-control" type="email" id="email" name="email" [(ngModel)]="commande.email" [disabled]="true" placeholder="votre email *" required /><small class="form-text text-danger help-block lead"></small></div>
+                            <div class="form-group">
+                              <input ngModel class="form-control" type="text" id="adresse" name="adresse" [(ngModel)]="commande.adresse" [disabled]="true" placeholder="votre adresse  *" required /><small class="form-text text-danger help-block lead"></small></div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <h4 class="text-uppercase section-heading">details du produit</h4>
+
+                        <div class="form-group">
+                          <input ngModel class="form-control" type="text" name="produitCodeBar"  [(ngModel)]="commande.produit.codeBar" [disabled]="true"  id="produitCodeBar" required/><small class="form-text text-danger help-block lead"></small></div>
+                        <div class="form-group"><input ngModel class="form-control" type="text" name="nomproduit"  [disabled]="true" [(ngModel)]="commande.cout" id="nomproduit" placeholder="nom"/><small class="form-text text-danger help-block lead"></small></div>
+                        <div class="form-group"><input ngModel class="form-control" type="text" name="couleur" [disabled]="true" [(ngModel)]="commande.produit.couleur" id="couleur" placeholder="couleur *" /><small class="form-text text-danger help-block lead"></small></div>
+                        <div class="form-group"><input #quantite class="form-control" type="text" name="quantiteProduit" [disabled]="true" [(ngModel)]="commande.quantiteProduit" placeholder="quantite *"/>
+                          <small class="form-text text-danger help-block lead"></small></div>
+                        </div>
+                    <div class="clearfix"></div>
+                    <div class="col-lg-12 text-center">
+                     <div class="form-group">
+                       <input *ngFor="let livreur of livreurs" ngModel class="form-control" type="text" name="livreur"  [(ngModel)]="commande.livreur" id="livreur" placeholder="livreur" {{livreur.id}}/>
+                      <small class="form-text text-danger help-block lead"></small></div>
+                        <div class="form-group">
+                          <input ngModel class="form-control"  type="text" name="approuve" [(ngModel)]="commande.approuver" id="aprouve" placeholder="approuve *" value="true" />
+                          <small class="form-text text-danger help-block lead"></small></div>
+                        <div id="success"></div>
+                        <button
+                        [disabled]="!monFormulaire.valid"
+                        (click)="processForm()"
+                         class="btn btn-primary btn-xl text-uppercase" type="submit">enregistrer</button>
+                    </div>
+                  </div>
+            </form>
+        </div>
+    </div>
+  </div>
+  </div>
+
