@@ -41,11 +41,11 @@ export class AdcommandeComponent implements OnInit {
     }
       )
   }
-  supprimer(commande:livraisonEntity){
-    this.commandeService.delete(commande.id).subscribe(
+  supprimer(com:livraisonEntity){
+    this.commandeService.delete(com.id).subscribe(
       (data) => {
         this.toastr.success(
-          `La commande de ${commande.id} a été supprimé avec succès`
+          `La commande de ${com.id} a été supprimé avec succès`
         );
         this.router.navigate(['login/admin',this.role]);
       },

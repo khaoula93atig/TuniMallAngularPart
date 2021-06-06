@@ -1,9 +1,9 @@
 <ul class="list-group">
-    <li><a class="btn-primary" href="/admin#users">users</a></li>
-    <li *ngIf="!role"><a class="btn-primary" href="/admin#commandes">Commandes</a></li>
-    <li *ngIf="!role"><a class="btn-primary" href="/admin#complaints">Complaints</a></li>
-    <li><a class="btn-primary" href="/admin#boutique">boutiques</a></li>
-    <li><a class="btn-primary" href="/admin#produit">produit</a></li>
+    <li ><a class="btn-primary" href="/admin#users">users</a></li>
+    <li ><a class="btn-primary" href="/admin#commandes">Commandes</a></li>
+    <li ><a class="btn-primary" href="/admin#complaints">Complaints</a></li>
+    <li ><a class="btn-primary" href="/admin#boutique">boutiques</a></li>
+    <li ><a class="btn-primary" href="/admin#produit">produit</a></li>
     <li class="btn-dark">
       <a
         *ngIf="authService.isAuthenticated()"
@@ -16,6 +16,7 @@
     </li>
 </ul>
 <div style="margin-left:10%;padding:1px 16px;height:1000px;">
+
   <section class="bg-light" id="users">
   <h1 style="text-align: center;">liste des utilisateurs</h1>
     <table class="table" id='users' style=" width:100% ">
@@ -36,7 +37,7 @@
             <th>{{user.sexe}}</th>
             <th>{{user.cin}}</th>
             <th>{{user.email}}</th>
-            <th>{{user.username}}</th>
+            <th >{{user.username}}</th>
 
             <th>
                 <button  class="btn btn-primary" (click)="updateUser() " [routerLink]="['user/update']">update</button>
@@ -47,15 +48,15 @@
     <button  class="btn btn-primary" (click)="Retour()" type="submit">add user</button>
   </section>
 
-    <section *ngIf="!role" class="bg-light" id="commandes">
+    <section  class="bg-light" id="commandes">
     <app-adcommande></app-adcommande>
     </section>
 
-    <section *ngIf="!role" class="bg-light" id="complaints">
+    <section  class="bg-light" id="complaints">
     <app-admincomplaint></app-admincomplaint>
   </section>
 
-  <section class="bg-light" id="boutique">
+  <section  class="bg-light" id="boutique">
     <h1 style="text-align: center;">liste des boutiques</h1>
     <table class="table" id='boutiques' style=" width:100% ">
         <thead class="thead-dark">
@@ -63,14 +64,14 @@
                 <th>nom</th>
                 <th>path</th>
                 <th>image</th>
-                <th>Action</th>
+                <th *ngIf=" auth.role== role ">Action</th>
             </tr>
         </thead>
         <tr *ngFor="let boutique of boutiques ">
             <th>{{boutique.nom}}</th>
             <th>{{boutique.path}}</th>
             <th>{{boutique.immage}}</th>
-            <th>
+            <th >
                 <button  class="btn btn-primary" (click)="updateUBoutique() " [routerLink]="['boutique/update']">update</button>
                 <button  class="btn btn-primary" ><a>delete</a></button>
             </th>
@@ -93,7 +94,7 @@
                 <th>image</th>
                 <th>codeBar</th>
                 <th>shopNom</th>
-                <th>Action</th>
+                <th >Action</th>
             </tr>
         </thead>
         <tr *ngFor="let produit of produits ">
@@ -107,7 +108,7 @@
             <th>{{produit.codeBar}}</th>
             <th>{{produit.shop.nom}}</th>
 
-            <th>
+            <th >
                 <button  class="btn btn-primary" (click)="updateProduit()" [routerLink]="['boutique/update']">update</button>
                 <button  class="btn btn-primary" >delete</button>
             </th>

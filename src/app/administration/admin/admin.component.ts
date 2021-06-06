@@ -20,8 +20,8 @@ export class AdminComponent implements OnInit {
   commandes:any;
   boutiques:any;
   id:string;
-  auth:any;
-  role:"adminajout";
+  public auth:any;
+  role="adminachat";
 
   constructor(private produit:ProduitService,
     private command:CommandeService,
@@ -39,9 +39,10 @@ export class AdminComponent implements OnInit {
         this.id=params.id;
 
       });
-    this.auth=this.userService.getbyid(this.auth,this.id);
-    this.role=this.auth.role;
-    
+    this.userService.getbyid(this.auth,this.id);
+    console.log(this.auth)
+    console.log(this.role);
+
     this.produit.getProduits().subscribe((result)=>{
       this.produits=result
     })
