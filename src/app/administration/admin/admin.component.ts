@@ -4,6 +4,9 @@ import { AdminService } from './../admin.service';
 import { ProduitService } from './../../produit/produit.service';
 import { CommandeService } from 'src/app/commande/commande.service';
 import { Component, OnInit} from '@angular/core';
+import { AuthService } from 'src/app/authentification/auth.service';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -19,7 +22,11 @@ export class AdminComponent implements OnInit {
   constructor(private produit:ProduitService,
     private command:CommandeService,
     private user:UserService,
-    private boutique:BoutiqueService) { }
+    private boutique:BoutiqueService,
+    public authService:AuthService,
+    public router: Router,
+    private toaster: ToastrService,
+    ) { }
   ngOnInit(): void {
     this.produit.getProduits().subscribe((result)=>{
       this.produits=result
@@ -34,4 +41,10 @@ export class AdminComponent implements OnInit {
       this.boutiques=result;
     })
   }
+  logout(): void {
+    this.authService.logout();
+    this.toaster.info('a la prochaine');
+    this.router.navigate(['login']);
+  }
+
 }
