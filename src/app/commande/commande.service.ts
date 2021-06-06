@@ -47,7 +47,13 @@ export class CommandeService {
       .pipe(
         catchError(this.errorHandler)
       )
+
 }
+getbylivreur(): Observable<livraisonEntity[]> {
+  return this.http.get<livraisonEntity[]>(this.apiServer+"livreur")
+    .pipe(
+      catchError(this.errorHandler)
+    )}
 
   errorHandler(error: { error: { message: string; }; status: any; message: any; }) {
     let errorMessage = '';

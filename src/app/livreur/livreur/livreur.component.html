@@ -10,6 +10,36 @@
     </a>
   </button>
 
+  <h1 style="text-align: center;">liste des commandes</h1>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">prix</th>
+            <th scope="col">produit</th>
+            <th scope="col">adresse</th>
+            <th scope="col">cout</th>
+            <th scope="col">etat</th>
+            <th scope="col">changer d'etat</th>
+        </tr>
 
-  <app-adcommande></app-adcommande>
+    </thead>
+    <tr scope="row" *ngFor="let l of listcommande">
+        <td>{{l.id}}</td>
+        <td>{{l.cout}}</td>
+        <td>{{l.produit.codeBar}}</td>
+        <td>{{l.adresse}}</td>
+        <td>{{l.cout}}</td>
+        <td >
+          <l *ngIf="l.terminer==false">en cours</l>
+          <l *ngIf="l.approuver==true && l.terminer==true">livrée</l>
+        </td>
+        <td>
+          <button *ngIf="l.terminer==false"
+           class="btn btn-primary"
+            (click)="Retour(l)">terminer</button>
+        </td>
+    </tr>
+
+</table>
 

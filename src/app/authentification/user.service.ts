@@ -7,7 +7,7 @@ import { USER } from '../model/user';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class UserAuthService {
 
   private apiServer = "http://localhost:3000/user/";
 
@@ -33,7 +33,7 @@ export class AuthService {
       )
   }
   getbyrole(role:string): Observable<USER[]> {
-    return this.http.get<USER[]>(this.apiServer+role)
+    return this.http.get<USER[]>(this.apiServer+"role/"+role)
       .pipe(
         catchError(this.errorHandler)
       )

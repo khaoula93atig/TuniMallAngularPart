@@ -35,17 +35,22 @@
                     <div class="clearfix"></div>
                     <div class="col-lg-12 text-center">
                      <div class="form-group">
-                       <input *ngFor="let livreur of livreurs" ngModel class="form-control" type="text" name="livreur"  [(ngModel)]="commande.livreur" id="livreur" placeholder="livreur" {{livreur.id}}/>
+                       <select ngModel class="form-control" name="livreur" required [(ngModel)]="commande.livreur" id="livreur" >
+                         <option *ngFor="let livreur of livreurs" >{{livreur.id}}</option>
+                       </select>
                       <small class="form-text text-danger help-block lead"></small></div>
-                        <div class="form-group">
-                          <input ngModel class="form-control"  type="text" name="approuve" [(ngModel)]="commande.approuver" id="aprouve" placeholder="approuve *" value="true" />
-                          <small class="form-text text-danger help-block lead"></small></div>
+                        <div class="form-group"></div>
                         <div id="success"></div>
-                        <button
+                        <div><button
                         [disabled]="!monFormulaire.valid"
                         (click)="processForm()"
                          class="btn btn-primary btn-xl text-uppercase" type="submit">enregistrer</button>
+                        </div>
+                        <br>
+                        <div>
+                        <button class="btn btn-dark btn-xl text-uppercase" (click)="Retour()">retour</button>
                     </div>
+                  </div>
                   </div>
             </form>
         </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AuthService } from 'src/app/authentification/user.service';
+import { UserAuthService } from 'src/app/authentification/user.service';
 import { livraisonEntity } from 'src/app/model/livraison';
 import { CommandeService } from '../commande.service';
 
@@ -17,7 +17,7 @@ export class AdcommandeComponent implements OnInit {
   commande:livraisonEntity;
   constructor(
     private commandeService : CommandeService,
-    private userservice : AuthService,
+    private userservice : UserAuthService,
     private activatedRoute:ActivatedRoute,
   ) { }
 

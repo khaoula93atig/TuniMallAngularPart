@@ -23,12 +23,12 @@
 
         </td>
         <td >
-          <l *ngIf="l.approuver==false && l.terminer== false">en attente</l>
+          <l *ngIf="l.approuver==false && l.terminer== false" >en attente</l>
           <l *ngIf="l.approuver==true && l.terminer==false">en cours</l>
           <l *ngIf="l.approuver==true && l.terminer==true">livrée</l>
         </td>
         <td>
-          <button *ngIf="!role && l.approuver==false" [routerLink]="['/detail',l.id]" type="button" class="btn btn-primary">approuver</button>
+          <button *ngIf="!role && (l.approuver==false)" [routerLink]="['/detail',l.id]" type="button" class="btn btn-primary">approuver</button>
           <button *ngIf="role && l.terminer==false" class="btn btn-primary">terminer</button>
         </td>
     </tr>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { livraisonEntity } from 'src/app/model/livraison';
-import { AuthService } from 'src/app/authentification/user.service';
 import { CommandeService } from '../commande.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
