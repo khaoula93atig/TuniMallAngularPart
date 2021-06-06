@@ -27,6 +27,7 @@ export class LivreurComponent implements OnInit {
     private userservice : UserAuthService,
     private activatedRoute:ActivatedRoute,
 
+
   ) { }
 
   ngOnInit(): void {
@@ -65,7 +66,7 @@ export class LivreurComponent implements OnInit {
         this.toaster.success(
           `la commande ${comm.id} a été terminée avec succès`
         );
-        this.router.navigate(['login/livreur']);
+        this.router.navigate(['login/livreur/livreur']);
       },
       (erreur) => {
         console.log(erreur);
@@ -74,6 +75,22 @@ export class LivreurComponent implements OnInit {
         );
       }
 
+    );
+  }
+
+  supprimer(com:livraisonEntity){
+    this.commandeService.delete(com.id).subscribe(
+      (data) => {
+        this.toaster.success(
+          `La commande de ${com.id} a été supprimé avec succès`
+        );
+        this.router.navigate(['login/livreur/livreur']);
+      },
+      (erreur) => {
+        this.toaster.error(
+          `Problème avec le serveur veuillez contacter l'admin`
+        );
+      }
     );
   }
 

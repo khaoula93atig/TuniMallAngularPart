@@ -30,6 +30,9 @@
         <td>
           <button *ngIf="!role && (l.approuver==false)" [routerLink]="['/detail',l.id]" type="button" class="btn btn-primary">approuver</button>
           <button *ngIf="role && l.terminer==false" class="btn btn-primary">terminer</button>
+          <button *ngIf="l.approuver==true && l.terminer==true" class="btn btn-primary"
+          (click)="supprimer(l)"
+          >supprimer</button>
         </td>
     </tr>
 

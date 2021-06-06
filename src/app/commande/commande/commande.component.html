@@ -40,6 +40,9 @@
                       (click)="processForm()"
                       [disabled]="!monFormulaire.valid || quantite.value>produit.quantite"
                        class="btn btn-primary btn-xl text-uppercase" type="submit">envoyer</button>
+                       <button
+                        [routerLink]="['']"
+                       class="btn btn-primary btn-xl text-uppercase" type="submit">retour</button>
                   </div>
                 </div>
           </form>

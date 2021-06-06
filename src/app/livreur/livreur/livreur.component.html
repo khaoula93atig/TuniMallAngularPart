@@ -38,7 +38,11 @@
           <button *ngIf="l.terminer==false"
            class="btn btn-primary"
             (click)="Retour(l)">terminer</button>
+            <button *ngIf="l.approuver==true && l.terminer==true" class="btn btn-primary"
+          (click)="supprimer(l)"
+          >supprimer</button>
         </td>
+
     </tr>
 
 </table>

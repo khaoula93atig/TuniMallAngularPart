@@ -22,9 +22,10 @@ const routes: Routes = [
   {path: 'apropos', component: TeamComponent},
   {path: 'login',
     children:[
-      { path: '', component: AuthComponent },
+      {path: '', component: AuthComponent },
       {path: 'admin/:role',component: AdminComponent},
       {path:'livreur/:role',component: LivreurComponent},
+      {path: 'admin/user/add', component: UserComponent}
 ]},
   {path: 'complain', component: ComplaintComponent},
   {path:'detail/:id',component:DetailscommandeComponent},
@@ -39,7 +40,7 @@ const routes: Routes = [
   {path: 'commande', component: CommandeComponent},
   {path:'auth',children :[{ path: ':id', component:CommandeComponent}]},
   {path: 'admin', component: AdminComponent},
-  {path: 'admin/user/add', component: UserComponent},
+  //{path: 'admin/user/add', component: UserComponent},
   {path: 'admin/boutique/add', component: AddBoutiqueComponent},
   {path: 'admin/produit/add', component: AddproduitComponent},
   {path: '**',redirectTo:''}

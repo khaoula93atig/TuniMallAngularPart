@@ -22,9 +22,10 @@ export class BoutiquesComponent implements OnInit {
     }
     getall(){
       this.BoutiqueService.getAllboutiques().subscribe(data =>{
-        this.boutiques=data
+        this.boutiques=data;
+        console.log(this.boutiques);
       }
-        )
+        );
     }
 
     visite(boutique:shopEntity)

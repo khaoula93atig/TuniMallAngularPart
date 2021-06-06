@@ -1,5 +1,6 @@
 import { BoutiqueService } from './../../../boutique/boutique.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-boutique',
@@ -16,7 +17,8 @@ export class AddBoutiqueComponent implements OnInit {
     image: '',
   };
   submitted = false;
-  constructor(private BoutiqueService:BoutiqueService) { }
+  constructor(private BoutiqueService:BoutiqueService,
+    public router: Router) { }
 
   ngOnInit(): void {
   }
@@ -48,6 +50,9 @@ export class AddBoutiqueComponent implements OnInit {
     path:'',
     image:'',
     };
+  }
+  Retour(){
+    this.router.navigate(['login/admin/user/add']);
   }
 
 }

@@ -5,8 +5,10 @@ import { ProduitService } from './../../produit/produit.service';
 import { CommandeService } from 'src/app/commande/commande.service';
 import { Component, OnInit} from '@angular/core';
 import { AuthService } from 'src/app/authentification/auth.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { UserAuthService } from 'src/app/authentification/user.service';
+import { USER } from 'src/app/model/user';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -17,8 +19,10 @@ export class AdminComponent implements OnInit {
   users:any;
   commandes:any;
   boutiques:any;
-  role:any;
-  id:any;
+  id:string;
+  auth:any;
+  role:"adminajout";
+
   constructor(private produit:ProduitService,
     private command:CommandeService,
     private user:UserService,
@@ -26,8 +30,18 @@ export class AdminComponent implements OnInit {
     public authService:AuthService,
     public router: Router,
     private toaster: ToastrService,
+    private activatedRoute: ActivatedRoute,
+    private userService : UserAuthService
     ) { }
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(
+      (params) => {
+        this.id=params.id;
+
+      });
+    this.auth=this.userService.getbyid(this.auth,this.id);
+    this.role=this.auth.role;
+    
     this.produit.getProduits().subscribe((result)=>{
       this.produits=result
     })
@@ -45,6 +59,9 @@ export class AdminComponent implements OnInit {
     this.authService.logout();
     this.toaster.info('a la prochaine');
     this.router.navigate(['login']);
+  }
+  Retour(){
+    this.router.navigate(['login/admin/user/add']);
   }
 
 }
