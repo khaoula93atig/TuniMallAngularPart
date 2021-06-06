@@ -1,7 +1,10 @@
-<ul>
-    <li><a class="active" href="admin/#users">users</a></li>
-    <li><a href="admin/#commands">Commands</a></li>
-    <li class="nav-item">
+<ul class="list-group">
+    <li><a class="btn-primary" href="/admin#users">users</a></li>
+    <li><a class="btn-primary" href="/admin#commandes">Commandes</a></li>
+    <li><a class="btn-primary" href="/admin#complaints">Complaints</a></li>
+    <li><a class="btn-primary" href="/admin#boutique">boutiques</a></li>
+    <li><a class="btn-primary" href="/admin#produit">produit</a></li>
+    <li class="btn-dark">
       <a
         *ngIf="authService.isAuthenticated()"
         class="nav-link"
@@ -13,7 +16,9 @@
     </li>
 </ul>
 <div style="margin-left:10%;padding:1px 16px;height:1000px;">
-    <table id='users' style=" width:100% ">
+  <section class="bg-light" id="users">
+  <h1 style="text-align: center;">liste des utilisateurs</h1>
+    <table class="table" id='users' style=" width:100% ">
         <thead class="thead-dark">
             <tr>
                 <th>nom</th>
@@ -39,8 +44,19 @@
         </tr>
     </table>
     <button [routerLink]="['admin/user/add']" type="submit">add user</button>
+  </section>
+
+    <section class="bg-light" id="commandes">
     <app-adcommande></app-adcommande>
-    <table id='boutiques' style=" width:100% ">
+    </section>
+
+    <section class="bg-light" id="complaints">
+    <app-admincomplaint></app-admincomplaint>
+  </section>
+
+  <section class="bg-light" id="boutique">
+    <h1 style="text-align: center;">liste des boutiques</h1>
+    <table class="table" id='boutiques' style=" width:100% ">
         <thead class="thead-dark">
             <tr>
                 <th>nom</th>
@@ -59,7 +75,11 @@
         </tr>
     </table>
     <button><a [routerLink]="['boutique/add']">add shop</a></button>
-    <table id='boutiques' style=" width:100% ">
+</section>
+
+<section class="bg-light" id="produit">
+<h1 style="text-align: center;">liste des produits</h1>
+    <table class="table" id='produits' style=" width:100% ">
         <thead class="thead-dark">
             <tr>
                 <th>nom</th>
@@ -91,6 +111,7 @@
         </tr>
     </table>
     <button><a [routerLink]="['produit/add']">add produit</a></button>
+    </section>
 </div>
 <!-- <table class="table ">
     <thead class="thead-dark ">

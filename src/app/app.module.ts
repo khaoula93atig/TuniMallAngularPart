@@ -23,6 +23,7 @@ import { DetailscommandeComponent } from './commande/detailscommande/detailscomm
 import { UserComponent } from './administration/user/user.component';
 import { AddBoutiqueComponent } from './administration/boutique/add-boutique/add-boutique.component';
 import { AddproduitComponent } from './administration/produit/addproduit/addproduit.component';
+import { AdmincomplaintComponent } from './complaint/admincomplaint/admincomplaint.component';
 
 
 @NgModule({
@@ -47,6 +48,8 @@ import { AddproduitComponent } from './administration/produit/addproduit/addprod
     AddBoutiqueComponent,
 
     AddproduitComponent,
+
+    AdmincomplaintComponent,
 
 
   ],

@@ -1,0 +1,20 @@
+<h1 style="text-align: center;">liste des complaints</h1>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">nom</th>
+            <th scope="col">prenom</th>
+            <th scope="col">sujet</th>
+            <th scope="col">reclamation</th>
+        </tr>
+
+    </thead>
+  <tr scope="row" *ngFor="let l of listComplaint">
+      <td>{{l.id}}</td>
+      <td>{{l.sujet}}</td>
+      <td>{{l.nom}}</td>
+      <td>{{l.prenom}}</td>
+      <td>{{l.reclamation}}</td>
+      </tr>
+</table>

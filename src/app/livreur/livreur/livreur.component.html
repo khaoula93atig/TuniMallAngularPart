@@ -1,1 +1,15 @@
-<p>livreur works!</p>
+
+  <button class="btn-dark">
+    <a
+      *ngIf="authService.isAuthenticated()"
+      class="nav-link"
+      routerLinkActive="active text-primary"
+      (click)="logout()"
+    >
+      Logout
+    </a>
+  </button>
+
+
+  <app-adcommande></app-adcommande>
+
