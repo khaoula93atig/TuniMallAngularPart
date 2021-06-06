@@ -1,5 +1,5 @@
+import { BoutiqueService } from './../boutique.service';
 import { Component, OnInit } from '@angular/core';
-import { BoutiqueService } from '../boutique.service';
 
 @Component({
   selector: 'app-boutiques',
@@ -7,11 +7,11 @@ import { BoutiqueService } from '../boutique.service';
   styleUrls: ['./boutiques.component.css']
 })
 export class BoutiquesComponent implements OnInit {
+
   data:any;
-  constructor(private shop:BoutiqueService) { }
+  constructor(private BoutiqueService:BoutiqueService) { }
   ngOnInit(): void {
-      this.shop.getData().subscribe((result)=>{
-      console.warn(result)
+      this.BoutiqueService.getBoutiques().subscribe((result)=>{
       this.data=result;
       })
     }

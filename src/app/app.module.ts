@@ -21,6 +21,8 @@ import { AdcommandeComponent } from './commande/adcommande/adcommande.component'
 
 import { DetailscommandeComponent } from './commande/detailscommande/detailscommande.component';
 import { UserComponent } from './administration/user/user.component';
+import { AddBoutiqueComponent } from './administration/boutique/add-boutique/add-boutique.component';
+import { AddproduitComponent } from './administration/produit/addproduit/addproduit.component';
 
 
 @NgModule({
@@ -41,6 +43,10 @@ import { UserComponent } from './administration/user/user.component';
     DetailscommandeComponent,
 
     UserComponent,
+
+    AddBoutiqueComponent,
+
+    AddproduitComponent,
 
 
   ],

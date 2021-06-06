@@ -1,3 +1,4 @@
+import { BoutiqueService } from './../../boutique/boutique.service';
 import { UserService } from '../user/user.service';
 import { AdminService } from './../admin.service';
 import { ProduitService } from './../../produit/produit.service';
@@ -12,12 +13,13 @@ export class AdminComponent implements OnInit {
   produits:any;
   users:any;
   commandes:any;
+  boutiques:any;
   role:any;
   id:any;
   constructor(private produit:ProduitService,
-    private userService:AdminService,
     private command:CommandeService,
-    private user:UserService) { }
+    private user:UserService,
+    private boutique:BoutiqueService) { }
   ngOnInit(): void {
     this.produit.getProduits().subscribe((result)=>{
       this.produits=result
@@ -27,6 +29,9 @@ export class AdminComponent implements OnInit {
     })
     this.command.getAll().subscribe((result)=>{
       this.commandes=result
+    })
+    this.boutique.getBoutiques().subscribe((result)=>{
+      this.boutiques=result;
     })
   }
 }
