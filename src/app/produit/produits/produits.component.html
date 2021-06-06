@@ -4,14 +4,25 @@
             <h2 class="text-uppercase section-heading">nos produits</h2>
         </div>
     </div>
-    <div *ngFor="let produit of produits" class="card">
-        <div>
-            <img src="{{produit.path}}" t="{{produit.nom}}" style="width:100%">
-            <h1>{{produit.nom}}</h1>
-            <p class="price">{{produit.price}}</p>
-            <p>color : {{produit.color}}</p>
-            <p>marque : {{produit.shop.name}}</p>
-            <button [routerLink]="['/commande',produit.codeBar]">commander</button>
-        </div>
+
+
+
+
+    <div class="row" >
+      <div class="col-sm-6 col-md-4 portfolio-item" *ngFor="let produit of produits">
+              <div class="portfolio-hover">
+              </div><img class="img-fluid" src="{{produit.image}}" t="{{produit.nom}}" style="width:100%">
+          <div class="portfolio-caption">
+              <h4>{{produit.nom}} {{produit.color}} </h4>
+              <h2>  {{produit.color}} </h2>
+              <h2>  {{produit.shop.name}} </h2>
+              <p class="price">{{produit.price}} dinars</p>
+          </div>
+      </div>
     </div>
+
+
+
+
+
 </div>
