@@ -62,14 +62,14 @@
             <tr>
                 <th>nom</th>
                 <th>path</th>
-                <th>image</th>
+
                 <th>Action</th>
             </tr>
         </thead>
         <tr *ngFor="let boutique of boutiques ">
             <th>{{boutique.nom}}</th>
             <th>{{boutique.path}}</th>
-            <th>{{boutique.immage}}</th>
+
             <th>
                 <button  class="btn btn-primary" (click)="updateUBoutique() " [routerLink]="['boutique/update']">update</button>
                 <button  class="btn btn-primary" ><a>delete</a></button>
@@ -90,7 +90,7 @@
                 <th>price</th>
                 <th>couleur</th>
                 <th>quantite</th>
-                <th>image</th>
+                
                 <th>codeBar</th>
                 <th>shopNom</th>
                 <th>Action</th>
@@ -103,7 +103,7 @@
             <th>{{produit.price}} DT</th>
             <th>{{produit.couleur}}</th>
             <th>{{produit.quantite}}</th>
-            <th><img src="{{produit.image}}"></th>
+            
             <th>{{produit.codeBar}}</th>
             <th>{{produit.shop.nom}}</th>
 
