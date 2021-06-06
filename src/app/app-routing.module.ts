@@ -42,6 +42,7 @@ const routes: Routes = [
   {path: 'admin/user/add', component: UserComponent},
   {path: 'admin/boutique/add', component: AddBoutiqueComponent},
   {path: 'admin/produit/add', component: AddproduitComponent},
+  {path: '**',redirectTo:''}
 
 ];
 

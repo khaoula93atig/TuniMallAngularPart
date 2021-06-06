@@ -5,7 +5,9 @@ export class shopEntity{
 
   path: string;
 
-      produits: shopEntity[];
+  image: string;
+
+  produits: shopEntity[];
 
 
 }

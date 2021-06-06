@@ -1,5 +1,7 @@
 import { BoutiqueService } from './../boutique.service';
 import { Component, OnInit } from '@angular/core';
+import { shopEntity } from 'src/app/model/shop';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-boutiques',
@@ -8,11 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoutiquesComponent implements OnInit {
 
-  data:any;
-  constructor(private BoutiqueService:BoutiqueService) { }
+  boutiques:shopEntity[];
+  constructor(
+    private BoutiqueService:BoutiqueService,
+    public router: Router,
+    ) { }
   ngOnInit(): void {
-      this.BoutiqueService.getBoutiques().subscribe((result)=>{
-      this.data=result;
-      })
+    this.getall();
+    this.boutiques;
+
+    }
+    getall(){
+      this.BoutiqueService.getAllboutiques().subscribe(data =>{
+        this.boutiques=data
+      }
+        )
+    }
+
+    visite(boutique:shopEntity)
+    {
+      console.log(boutique.path);
+      window.open(boutique.path, "_blank");
+
+      //this.router.navigateByUrl(boutique.path);
     }
 }
