@@ -11,7 +11,8 @@
     <div class="row" >
       <div class="col-sm-6 col-md-4 portfolio-item" *ngFor="let produit of produits">
               <div class="portfolio-hover">
-              </div><img class="img-fluid" src="{{produit.image}}" t="{{produit.nom}}" style="width:100%">
+                <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x" [routerLink]="['/commande',produit.codeBar]"></i></div>
+              </div><img class="img-fluid" src="{{produit.image}}" t="{{produit.nom}}" width="200" height="200">
           <div class="portfolio-caption">
               <h4>{{produit.nom}} {{produit.color}} </h4>
               <h2>  {{produit.color}} </h2>
